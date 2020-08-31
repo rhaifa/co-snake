@@ -41,7 +41,13 @@ def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, scre
 
 def handle_power_up(power_up, snakes, cur_snake, game_status):
     if power_up is None and 0 <= pygame.time.get_ticks() % 300 <= 10:  # after some time there is no power up on screen
-        power_up = random.choice([DoubleSpeed(), DoubleScore(), ShortenSnake()])  # create it
+        number = random.randint(1, 100)
+        if number <= 50:
+            power_up = DoubleSpeed()
+        elif number <= 90:
+            power_up = DoubleScore()
+        else:
+            power_up = ShortenSnake()
 
     if power_up is not None:
         if cur_snake.get_head_position() == power_up.get_position():  # if snake eat power up
@@ -135,7 +141,7 @@ def update_hall_of_fame(new_score):
     return False
 
 
-def print_hall_of_fame(enter_hall_of_fame, new_score, screen, hall_of_fame_font, medal_gold, medal_silver, medal_bronze):
+def print_hall_of_fame(enter_hall_of_fame, new_score, screen, hall_of_fame_font, image_dict):
     screen.fill((40, 40, 40))
     text = hall_of_fame_font.render("Hall Of Fame", 1, Color.FONT_1.value)
     x_pos, y_pos = int(SCREEN_WIDTH / 3), 50
@@ -154,11 +160,11 @@ def print_hall_of_fame(enter_hall_of_fame, new_score, screen, hall_of_fame_font,
         screen.blit(text, (x_pos, y_pos))
         medal = None
         if place == 0:
-            medal = medal_gold
+            medal = image_dict["medal_gold"]
         elif place == 1:
-            medal = medal_silver
+            medal = image_dict["medal_silver"]
         elif place == 2:
-            medal = medal_bronze
+            medal = image_dict["medal_bronze"]
         if medal is not None:
             screen.blit(medal, (x_pos - GRIDSIZE * 5, y_pos))
     pygame.display.update()
@@ -171,6 +177,33 @@ def print_game_over(screen, game_over_img):
     pygame.time.delay(GAME_OVER_DELAY)
 
 
+def load_game_images(icons_directory = "icons"):
+    """ load the classes images, and return the rest of the images (dict)"""
+
+    # create a dict with all the game's images
+    image_filenames = os.listdir(icons_directory)  # returns list
+    image_dict = dict()
+    for image_file in image_filenames:
+        without_suffix = image_file.split(".")[0]
+        image_dict[without_suffix] = pygame.image.load(os.path.join(icons_directory, image_file))
+
+    # resize classes images and set them
+    large_greed = int(GRIDSIZE * 1.3)
+    Apple.img = pygame.transform.scale(image_dict['apple'], (large_greed, large_greed))
+    Banana.img = pygame.transform.scale(image_dict['banana'], (large_greed, large_greed))
+    DoubleScore.img = pygame.transform.scale(image_dict['double_score'], (large_greed, large_greed))
+    DoubleSpeed.img = pygame.transform.scale(image_dict['double_speed'], (large_greed, large_greed))
+    ShortenSnake.img = pygame.transform.scale(image_dict['shorten_snake'], (large_greed, large_greed))
+
+    # resize the remaining images and return them:
+    remaining_images = dict()
+    remaining_images['game_over'] = pygame.transform.scale(image_dict['game_over'], (GRIDSIZE*6, GRIDSIZE*6))
+    medal_size = (GRIDSIZE*3, GRIDSIZE*3)
+    remaining_images['medal_gold'] = pygame.transform.scale(image_dict['medal_gold'], medal_size)
+    remaining_images['medal_silver'] = pygame.transform.scale(image_dict['medal_silver'], medal_size)
+    remaining_images['medal_bronze'] = pygame.transform.scale(image_dict['medal_bronze'], medal_size)
+    return remaining_images
+
 def main():
     # Initialize the pygame
     pygame.init()
@@ -182,30 +215,10 @@ def main():
 
     # Title and Icon
     pygame.display.set_caption("Co-Snake")
-    icon = pygame.image.load("icons/snake_icon.png")
+    icon = pygame.image.load("icons/game_icon.png")
     pygame.display.set_icon(icon)
 
-    # load all the game pictures into 'image_dict'
-    icons_directory = "icons"
-    image_filenames = os.listdir(icons_directory)  # returns list
-    image_dict = dict()
-    for image_file in image_filenames:
-        without_suffix = image_file.split(".")[0]
-        image_dict[without_suffix] = pygame.image.load(os.path.join(icons_directory, image_file))
-
-    large_greed = int(GRIDSIZE * 1.3)
-    Apple.img = pygame.transform.scale(image_dict['apple'], (large_greed, large_greed))
-    Banana.img = pygame.transform.scale(image_dict['banana'], (large_greed, large_greed))
-    DoubleScore.img = pygame.transform.scale(image_dict['double_score'], (large_greed, large_greed))
-    DoubleSpeed.img = pygame.transform.scale(image_dict['double_speed'], (large_greed, large_greed))
-    ShortenSnake.img = pygame.transform.scale(image_dict['shorten_snake'], (large_greed, large_greed))
-
-    game_over_img = pygame.transform.scale(image_dict['game_over'], (GRIDSIZE*6, GRIDSIZE*6))
-    medal_size = (GRIDSIZE*3, GRIDSIZE*3)
-    medal_gold = pygame.transform.scale(image_dict['medal_gold'], medal_size)
-    medal_silver = pygame.transform.scale(image_dict['medal_silver'], medal_size)
-    medal_bronze = pygame.transform.scale(image_dict['medal_bronze'], medal_size)
-
+    image_dict = load_game_images()
     clock = pygame.time.Clock()
     game_font = pygame.font.SysFont("monospace", 16)
     hall_of_fame_font = pygame.font.SysFont("monospace", 28)
@@ -223,10 +236,9 @@ def main():
         for i, cur_snake in enumerate(snakes):
             game_over = cur_snake.move(other_snake_positions=get_other_snake_positions(snakes, number_of_players, i))
             if game_over:
-                print_game_over(screen, game_over_img)
+                print_game_over(screen, image_dict["game_over_img"])
                 enter_hall_of_fame = update_hall_of_fame(game_status[Status.SCORE])
-                print_hall_of_fame(enter_hall_of_fame, game_status[Status.SCORE], screen, hall_of_fame_font, medal_gold,
-                                   medal_silver, medal_bronze)
+                print_hall_of_fame(enter_hall_of_fame, game_status[Status.SCORE], screen, hall_of_fame_font, image_dict)
                 reset_snakes(snakes)
                 game_status = get_new_game_status()
 
