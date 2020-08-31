@@ -4,6 +4,7 @@ from abc import abstractmethod
 
 from config_manager import Color, Status, GRIDSIZE
 from eatable_object import EatableObject
+from game import choose_power_up
 
 
 class PowerUp(EatableObject):
@@ -26,7 +27,6 @@ class PowerUp(EatableObject):
 
 
 class DoubleSpeed(PowerUp):
-    name = "double_speed"
     img = None
     text = "X2 SPEED"
     text_color = Color.DoubleSpeed_TEXT.value
@@ -37,7 +37,6 @@ class DoubleSpeed(PowerUp):
 
 
 class DoubleScore(PowerUp):
-    name = "double_score"
     img = None
     text = "X2 SCORE"
     text_color = Color.DoubleScore_TEXT.value
@@ -48,31 +47,18 @@ class DoubleScore(PowerUp):
 
 
 class ShortenSnake(PowerUp):
-    name = "shorten_snake"
     img = None
-    text = ""
-    text_color = None
 
     def active(self, game_status, snakes):
         how_much_to_cut = random.randint(2, 4)
         for snake in snakes:
             snake.shorten(how_much_to_cut)
 
-"""
-More power up ideas
-class DoubleScore(PowerUp):
-    def __init__(self):
-        self.name = "general"
 
-class ChangeSnakeLength(PowerUp):
-    def __init__(self):
-        self.name = "general"
+class RandomPowerup(PowerUp):
+    img = None
 
-class ChangeColor(PowerUp):
-    def __init__(self):
-        self.name = "general"
+    def active(self, game_status, snakes):
+        p = random.choice([DoubleSpeed(), DoubleScore(), ShortenSnake()])
+        p.active(game_status, snakes)
 
-class QuestionMark(PowerUp):
-    def __init__(self):
-        self.name = "general"
-"""

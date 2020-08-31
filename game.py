@@ -39,15 +39,21 @@ def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, scre
     pygame.display.update()
 
 
+def choose_power_up():
+    number = random.randint(1, 100)
+    if number <= 40:
+        return DoubleSpeed()
+    elif number <= 80:
+        return DoubleScore()
+    elif number <= 95:
+        return RandomPowerup()
+    else:
+        return ShortenSnake()
+
+
 def handle_power_up(power_up, snakes, cur_snake, game_status):
     if power_up is None and 0 <= pygame.time.get_ticks() % 300 <= 10:  # after some time there is no power up on screen
-        number = random.randint(1, 100)
-        if number <= 50:
-            power_up = DoubleSpeed()
-        elif number <= 90:
-            power_up = DoubleScore()
-        else:
-            power_up = ShortenSnake()
+        power_up = choose_power_up()
 
     if power_up is not None:
         if cur_snake.get_head_position() == power_up.get_position():  # if snake eat power up
@@ -194,6 +200,7 @@ def load_game_images(icons_directory = "icons"):
     DoubleScore.img = pygame.transform.scale(image_dict['double_score'], (large_greed, large_greed))
     DoubleSpeed.img = pygame.transform.scale(image_dict['double_speed'], (large_greed, large_greed))
     ShortenSnake.img = pygame.transform.scale(image_dict['shorten_snake'], (large_greed, large_greed))
+    RandomPowerup.img = pygame.transform.scale(image_dict['random_powerup'], (large_greed, large_greed))
 
     # resize the remaining images and return them:
     remaining_images = dict()
