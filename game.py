@@ -243,7 +243,7 @@ def main():
         for i, cur_snake in enumerate(snakes):
             game_over = cur_snake.move(other_snake_positions=get_other_snake_positions(snakes, number_of_players, i))
             if game_over:
-                print_game_over(screen, image_dict["game_over_img"])
+                print_game_over(screen, image_dict["game_over"])
                 enter_hall_of_fame = update_hall_of_fame(game_status[Status.SCORE])
                 print_hall_of_fame(enter_hall_of_fame, game_status[Status.SCORE], screen, hall_of_fame_font, image_dict)
                 reset_snakes(snakes)
