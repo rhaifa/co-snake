@@ -39,13 +39,13 @@ def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, scre
     pygame.display.update()
 
 
-def handle_power_up(power_up, snake, game_status):
+def handle_power_up(power_up, snakes, cur_snake, game_status):
     if power_up is None and 0 <= pygame.time.get_ticks() % 300 <= 10:  # after some time there is no power up on screen
-        power_up = random.choice([DoubleSpeed(), DoubleScore()])  # create it
+        power_up = random.choice([DoubleSpeed(), DoubleScore(), ShortenSnake()])  # create it
 
     if power_up is not None:
-        if snake.get_head_position() == power_up.get_position():  # if snake eat power up
-            power_up.active(game_status)  # active it's effect
+        if cur_snake.get_head_position() == power_up.get_position():  # if snake eat power up
+            power_up.active(game_status, snakes)  # active it's effect
             power_up = None  # remove power up
 
     # TODO handle this better
@@ -198,6 +198,8 @@ def main():
     Banana.img = pygame.transform.scale(image_dict['banana'], (large_greed, large_greed))
     DoubleScore.img = pygame.transform.scale(image_dict['double_score'], (large_greed, large_greed))
     DoubleSpeed.img = pygame.transform.scale(image_dict['double_speed'], (large_greed, large_greed))
+    ShortenSnake.img = pygame.transform.scale(image_dict['shorten_snake'], (large_greed, large_greed))
+
     game_over_img = pygame.transform.scale(image_dict['game_over'], (GRIDSIZE*6, GRIDSIZE*6))
     medal_size = (GRIDSIZE*3, GRIDSIZE*3)
     medal_gold = pygame.transform.scale(image_dict['medal_gold'], medal_size)
@@ -218,8 +220,8 @@ def main():
         number_of_players = len(snakes)
         draw_grid(surface)
 
-        for i, snake in enumerate(snakes):
-            game_over = snake.move(other_snake_positions=get_other_snake_positions(snakes, number_of_players, i))
+        for i, cur_snake in enumerate(snakes):
+            game_over = cur_snake.move(other_snake_positions=get_other_snake_positions(snakes, number_of_players, i))
             if game_over:
                 print_game_over(screen, game_over_img)
                 enter_hall_of_fame = update_hall_of_fame(game_status[Status.SCORE])
@@ -228,11 +230,11 @@ def main():
                 reset_snakes(snakes)
                 game_status = get_new_game_status()
 
-            if snake.get_head_position() == food.position:
-                snake.length += 1
+            if cur_snake.get_head_position() == food.position:
+                cur_snake.length += 1
                 game_status[Status.SCORE] = game_status[Status.SCORE] + (food.get_nutrition_value() * game_status[Status.SCORE_FACTOR])
                 food = random.choice([Apple(), Banana()])
-            power_up = handle_power_up(power_up, snake, game_status)
+            power_up = handle_power_up(power_up, snakes, cur_snake, game_status)
         _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, screen, game_font)
 
 

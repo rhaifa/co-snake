@@ -61,6 +61,12 @@ class Snake:
         else:
             self.can_change_direction = True
 
+    def shorten(self, how_much_to_cut):
+        how_much_to_cut = min(how_much_to_cut, self.length-1)
+        self.length -= how_much_to_cut
+        if self.length > 1:
+            self.positions = self.positions[:-how_much_to_cut]
+
 
     def reset(self):
         self._put_on_screen()
