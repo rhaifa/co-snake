@@ -69,7 +69,7 @@ def handle_keys(snakes):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            sys.exit()
+            exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 snakes[0].turn(UP)

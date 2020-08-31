@@ -1,6 +1,4 @@
 from enum import Enum
-import pygame
-
 
 # GAME SETTINGS
 BASE_GAME_SPEED = 8
