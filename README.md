@@ -1,7 +1,7 @@
 # Co-Snake
 Multiplayer cooperative snake game
 
-<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_preview.png.png width=75>
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_preview.png width=75>
 
 <b>Quick setup</b><br />
 step1: Download the game<br />
@@ -34,7 +34,7 @@ Examples:<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_normal.png> Normal snake:<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_speed.png> Snake with 'Double Speed' power up: the speed of this snake is x2<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score.png> Snake with 'Double Score' power up: the score value of food is x2<br />
-Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
 Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:
 the speed of the snake is X8 and the score value of food is x4 <br/>
 
