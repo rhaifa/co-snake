@@ -1,9 +1,9 @@
 from config_manager import *
 import random
+from abc import ABC
 
 
-# TODO: convert to abstract class?
-class EatableObject:
+class EatableObject(ABC):
     img = None
 
     def __init__(self):
@@ -16,6 +16,5 @@ class EatableObject:
     def get_position(self):
         return self.position
 
-    # TODO improve
     def draw(self, surface):
         surface.blit(self.__class__.img, (self.position[0], self.position[1]))
