@@ -1,3 +1,3 @@
 # co-snake
 Multiplayer cooperative snake game
-![alt text](https://raw.githubusercontent.com/rhaifa/co-snake/master/icons/game_icom.png)
+![alt text](https://github.com/rhaifa/co-snake/blob/master/icons/game_icon.png)
