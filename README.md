@@ -26,8 +26,29 @@ DoubleScore - X2 the score value of food for a short time<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/shorten_snake.png width=30>
 ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
-RandomPowerup - choose randomly between all other powerups<br />
+RandomPowerup - choose randomly between all other powerups<br /><br />
+
+Power Ups Combos
 The snakes can have multiple powerups active at the same time<br />
+Examples:
+Regular snake:
+Snake with 'Double Speed' power up:
+the speed of this snake is x2
+Snake with 'Double Score' power up:
+the score value of food is x2
+Snake with 'Double Speed' and 'Double Score' power up:
+the speed of this snake is x2 and the score value of food is x2
+
+Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:
+the speed of the snake is X8 and the score value of food is x4
+
+powerup combos
+Every time a power up of the same type is taken, the duration of the old powerup is prolonged:
+Example: if a snake has 'Double Score' power up that will last one more second, and then he eats 'Double Score' powerup
+(that for this example will last 8 seconds), then the old 'Double Score' power up will last also 8 seconds (instead of 1)
+
+
+
 
 
 <b>Multiplayer</b><br />
