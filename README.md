@@ -12,8 +12,8 @@ How to play:<br />
 The goal of the game is to get the highest score. You achive this by eating food and power-ups.<br />
 once you eat yourself (or another snake) the game is over.<br />
 <br />
-foods:<br />
-Apple - equal 1 point<br />
+Foods:<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/apple.png width=30>
-Banana - equal 3 point<br />
+Apple - equal 1 point<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/banana.png width=30>
+Banana - equal 3 point<br />
