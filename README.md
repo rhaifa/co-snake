@@ -5,7 +5,7 @@ Multiplayer cooperative snake game
 
 <b>Quick setup</b><br />
 step1: Download the game<br />
-step2: Install 'pygame' package (one option is to run 'pip install -r /path/to/requirements.txt' in your terminal)<br />
+step2: Install 'pygame' package (or run 'pip install -r /path/to/requirements.txt' in your terminal)<br />
 step3: run game.py<br />
 <br />
 <b>How to play:</b><br />
