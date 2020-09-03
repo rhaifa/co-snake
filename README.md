@@ -28,9 +28,8 @@ ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
 RandomPowerup - choose randomly between all other powerups<br /><br />
 
-<br/>
 Note: power ups are replaced only when you eat them
-
+<br/>
 <b>Power Ups Combos</b><br/>
 The snakes can have multiple powerups active at the same time<br />
 Examples:<br />
@@ -50,7 +49,8 @@ A possible strategy is to stock up 'Double Score' power ups and get a huge score
 
 
 <b>Multiplayer</b><br />
-Press 'space' to join new snake.2nd player keys are:<br/> \<img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player2.png width=60><br/>
+Press 'space' to join new snake.2nd player keys are:<br/> 
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player2.png width=60><br/>
 This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them.
 
 
