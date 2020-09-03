@@ -1,11 +1,11 @@
 # Co-Snake
 Multiplayer cooperative snake game
 
-<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_icon.png width=50>
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_preview.png>
 
 <b>Quick setup</b><br />
 step1: Download the game<br />
-step2: Install 'pygame' package (one option is to run 'pip install -r /path/to/requirements.txt' in your terminal)<br />
+step2: Install 'pygame' package (or run 'pip install -r /path/to/requirements.txt' in your terminal)<br />
 step3: run game.py<br />
 <br />
 <b>How to play:</b><br />
@@ -26,30 +26,31 @@ DoubleScore - X2 the score value of food for a short time<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/shorten_snake.png width=30>
 ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
-RandomPowerup - choose randomly between all other powerups<br /><br />
-
+RandomPowerup - choose randomly between all other powerups<br />
+<br />
+Note: power ups are replaced only when you eat them<br />
+<br/>
 <b>Power Ups Combos</b><br/>
 The snakes can have multiple powerups active at the same time<br />
 Examples:<br />
-Regular snake:<br />
-Snake with 'Double Speed' power up: the speed of this snake is x2<br />
-Snake with 'Double Score' power up: the score value of food is x2<br />
-Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
-Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:
-the speed of the snake is X8 and the score value of food is x4 <br/>
-
-
-Important: Every time a power up of the same type is taken, the duration of the old powerup is prolonged:<br/>
-Example: if a snake has 'Double Score' power up that will last one more second, and then he eats 'Double Score' powerup
-(that for this example will last 8 seconds), then the old 'Double Score' power up will last also 8 seconds (instead of 1)<br/>
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_normal.png> Normal snake:<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_speed.png> Snake with 'Double Speed' power up: the speed of this snake is x2<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score.png> Snake with 'Double Score' power up: the score value of food is x2<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:<br/>
+the speed of the snake is X8, also the score value of food is x4 <br/>
 
 
 
+Important: Every time a power up of the same type is taken, the duration of the old powerup is prolonged.<br/>
+Example: if a snake has 'Double Score' power up that will last 1 second, and then he eats 'Double Score' powerup
+(that for this example will last 8 seconds), then the old 'Double Score' power up will last also 8 seconds (instead of 1).<br/>
+A possible strategy is to stock up 'Double Score' power ups and get a huge score duplication bonus.
 
 
 <b>Multiplayer</b><br />
-Press 'space' to join new snake.
-2nd player keys are: <img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player_2.png width=30>
+Press 'space' to join new snake.2nd player keys are:<br/> 
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player2.png width=60><br/>
 This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them.
 
 
