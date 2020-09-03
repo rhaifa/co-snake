@@ -17,3 +17,15 @@ Once you eat yourself (or another snake) the game is over.<br />
 Apple - equal 1 point<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/banana.png width=30>
 Banana - equal 3 point<br />
+
+<b>PowerUps:</b><br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/double_speed.png width=30>
+DoubleSpeed - equal 1 point<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/souble_score.png width=30>
+DoubleScore - equal 1 point<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/shorten_snake.png width=30>
+ShortenSnake - equal 1 point<br />
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
+RandomPowerup - equal 1 point<br />
+
+
