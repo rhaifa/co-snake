@@ -26,9 +26,9 @@ DoubleScore - X2 the score value of food for a short time<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/shorten_snake.png width=30>
 ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
-RandomPowerup - choose randomly between all other powerups<br /><br />
-
-Note: power ups are replaced only when you eat them
+RandomPowerup - choose randomly between all other powerups<br />
+<br />
+Note: power ups are replaced only when you eat them<br />
 <br/>
 <b>Power Ups Combos</b><br/>
 The snakes can have multiple powerups active at the same time<br />
