@@ -28,6 +28,9 @@ ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
 RandomPowerup - choose randomly between all other powerups<br /><br />
 
+<br/>
+Note: power ups are replaced only when you eat them
+
 <b>Power Ups Combos</b><br/>
 The snakes can have multiple powerups active at the same time<br />
 Examples:<br />
@@ -37,8 +40,7 @@ Examples:<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:<br/>
 the speed of the snake is X8, also the score value of food is x4 <br/>
-<br/>
-Note: power ups are replaced only when you eat them
+
 
 
 Important: Every time a power up of the same type is taken, the duration of the old powerup is prolonged.<br/>
