@@ -1,7 +1,7 @@
 # Co-Snake
 Multiplayer cooperative snake game
 
-<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_preview.png width=75>
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/game_preview.png>
 
 <b>Quick setup</b><br />
 step1: Download the game<br />
