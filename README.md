@@ -8,7 +8,7 @@ step1: Download the game<br />
 step2: Install 'pygame' package (one option is to run 'pip install -r /path/to/requirements.txt' in your terminal)<br />
 step3: run game.py<br />
 <br />
-How to play:<br />
+<b>How to play:</b><br />
 The goal of the game is to get the highest score. You achive this by eating food and power-ups.<br />
 Once you eat yourself (or another snake) the game is over.<br />
 <br />
