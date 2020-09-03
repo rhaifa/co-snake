@@ -35,7 +35,7 @@ Examples:<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_speed.png> Snake with 'Double Speed' power up: the speed of this snake is x2<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score.png> Snake with 'Double Score' power up: the score value of food is x2<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 'Double Speed' and 'Double Score' power up: the speed of this snake is x2 and the score value of food is x2<br />
-Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:
+<img src=https://github.com/rhaifa/co-snake/blob/master/icons/snake_double_score_and_double_speed.png>Snake with 3 'Double Speed' power ups and 2 'Double Score' power ups:
 the speed of the snake is X8 and the score value of food is x4 <br/>
 
 
@@ -49,7 +49,7 @@ Example: if a snake has 'Double Score' power up that will last one more second, 
 
 <b>Multiplayer</b><br />
 Press 'space' to join new snake.
-2nd player keys are: <img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player_2.png width=30>
+2nd player keys are: <img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player2.png width=30>
 This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them.
 
 
