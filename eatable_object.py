@@ -1,9 +1,9 @@
 from config_manager import *
 import random
 
+
 # TODO: convert to abstract class?
 class EatableObject:
-    name = None
     img = None
 
     def __init__(self):

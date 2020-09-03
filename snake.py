@@ -54,7 +54,6 @@ class Snake:
         if len(self.positions) > self.length:  # did not found food:
             self.positions.pop()  # tail progress
 
-
         if self.future_direction:  # if snake has planes to change it's direcion - apply them
             self.direction = self.future_direction
             self.future_direction = None

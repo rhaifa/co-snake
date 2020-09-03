@@ -17,7 +17,7 @@ def get_new_game_status():
             Status.SCORE_FACTOR: BASE_GAME_SCORE_FACTOR}
 
 
-def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, screen, game_font):
+def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, screen, game_font, image_dict):
     for snake in snakes:
         snake.draw(surface, game_status)
     food.draw(surface)
@@ -34,7 +34,8 @@ def _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, scre
     if len(snakes) == 1:
         text_player_2 = game_font.render(f"Player2: press space to join", 1, Color.FONT_2.value)
     else:
-        text_player_2 = game_font.render(f"Keys: w,a,s,d", 1, Color.FONT_2.value)
+        screen.blit(image_dict["keyboard_player2"], (10, 5))
+        text_player_2 = game_font.render(f"Player2 Keys", 1, Color.FONT_2.value)
     screen.blit(text_player_2, (5, 10))
     pygame.display.update()
 
@@ -209,6 +210,7 @@ def load_game_images(icons_directory = "icons"):
     remaining_images['medal_gold'] = pygame.transform.scale(image_dict['medal_gold'], medal_size)
     remaining_images['medal_silver'] = pygame.transform.scale(image_dict['medal_silver'], medal_size)
     remaining_images['medal_bronze'] = pygame.transform.scale(image_dict['medal_bronze'], medal_size)
+    remaining_images['keyboard_player2'] = pygame.transform.scale(image_dict['keyboard_player2'], medal_size)
     return remaining_images
 
 def main():
@@ -254,7 +256,7 @@ def main():
                 game_status[Status.SCORE] = game_status[Status.SCORE] + (food.get_nutrition_value() * game_status[Status.SCORE_FACTOR])
                 food = random.choice([Apple(), Banana()])
             power_up = handle_power_up(power_up, snakes, cur_snake, game_status)
-        _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, screen, game_font)
+        _draw_everthing_on_screen(power_up, snakes, game_status, food, surface, screen, game_font, image_dict)
 
 
 
