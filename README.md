@@ -39,12 +39,9 @@ Examples:<br />
 the speed of the snake is X8, also the score value of food is x4 <br/>
 
 
-Important: Every time a power up of the same type is taken, the duration of the old powerup is prolonged:<br/>
-Example: if a snake has 'Double Score' power up that will last one more second, and then he eats 'Double Score' powerup
+Important: Every time a power up of the same type is taken, the duration of the old powerup is prolonged.<br/>
+Example: if a snake has 'Double Score' power up that will last 1 second, and then he eats 'Double Score' powerup
 (that for this example will last 8 seconds), then the old 'Double Score' power up will last also 8 seconds (instead of 1)<br/>
-
-
-
 
 
 <b>Multiplayer</b><br />
