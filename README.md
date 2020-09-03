@@ -28,7 +28,7 @@ ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
 RandomPowerup - choose randomly between all other powerups<br /><br />
 
-Power Ups Combos<br/>
+<b>Power Ups Combos<b><br/>
 The snakes can have multiple powerups active at the same time<br />
 Examples:<br />
 Regular snake:<br />
