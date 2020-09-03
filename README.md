@@ -27,6 +27,10 @@ DoubleScore - X2 the score value of food for a short time<br />
 ShortenSnake - Shorten the snakes by 2-4 tiles<br />
 <img src=https://github.com/rhaifa/co-snake/blob/master/icons/random_powerup.png width=30>
 RandomPowerup - choose randomly between all other powerups<br />
+The snakes can have multiple powerups active at the same time<br />
 
-This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them
+
+<b>Multiplayer</b><br />
+This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them.
+
 
