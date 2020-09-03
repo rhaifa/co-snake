@@ -48,6 +48,8 @@ Example: if a snake has 'Double Score' power up that will last one more second, 
 
 
 <b>Multiplayer</b><br />
+Press 'space' to join new snake.
+2nd player keys are: <img src=https://github.com/rhaifa/co-snake/blob/master/icons/keyboard_player_2.png width=30>
 This is cooperative game - power ups are activated on all the snakes regardless the snake that eat them.
 
 
